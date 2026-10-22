@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="我的个人主页：记录个人成长、法学研究与项目管理实践。">
+  <title>我的个人主页 · 思考与实践</title>
+  <style>
+    :root { color-scheme: light; --ink: #203731; --muted: #5d6d66; --accent: #27634d; --line: #dce3db; --paper: #f6f7f1; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.8; }
+    a { color: inherit; text-underline-offset: 5px; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 6px; border-radius: 4px; }
+    .skip-link { position: absolute; top: -100px; left: 20px; padding: 8px 16px; background: white; z-index: 2; }
+    .skip-link:focus { top: 12px; }
+    .container { width: min(1080px, 100% - 48px); margin-inline: auto; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 27px; border-bottom: 1px solid var(--line); }
+    .brand { font-size: 18px; font-weight: 700; text-decoration: none; letter-spacing: 1px; }
+    .brand span { color: var(--accent); margin-right: 10px; }
+    nav { display: flex; flex-wrap: wrap; gap: 24px; font-size: 14px; }
+    nav a { text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .hero { padding: 88px 0 76px; max-width: 800px; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: 2px; color: var(--accent); }
+    .eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--accent); }
+    h1 { margin: 22px 0; font-size: clamp(36px, 6vw, 64px); line-height: 1.22; letter-spacing: -2px; font-weight: 650; }
+    h1 span { color: var(--accent); }
+    .hero p { max-width: 580px; margin: 0; color: var(--muted); font-size: 18px; }
+    .button { display: inline-block; margin-top: 30px; padding: 11px 23px; color: white; background: var(--accent); border-radius: 7px; text-decoration: none; font-size: 14px; }
+    .button:hover { background: #1c4e3b; }
+    .intro { display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; padding: 38px 0 46px; border-top: 1px solid var(--line); }
+    .section-label { font-size: 12px; letter-spacing: 2px; color: var(--muted); margin: 0 0 8px; }
+    h2 { font-size: 26px; line-height: 1.4; margin: 0 0 16px; }
+    .intro p:last-child { color: var(--muted); margin: 0; }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; padding-bottom: 64px; }
+    .card { padding: 32px; background: #fff; border: 1px solid var(--line); border-radius: 14px; }
+    .card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 26px; }
+    .card-number { font-size: 13px; color: var(--muted); }
+    .badge { font-size: 12px; color: var(--accent); background: #edf3eb; border-radius: 30px; padding: 3px 12px; }
+    .card p { color: var(--muted); margin: 0 0 22px; }
+    .card ul { padding-left: 20px; margin: 0; }
+    .card li { margin-top: 7px; font-size: 15px; }
+    .note { border-top: 1px solid var(--line); padding-top: 19px; margin-top: 26px; font-size: 13px; color: var(--muted); }
+    footer { border-top: 1px solid var(--line); padding: 22px 0 30px; display: flex; justify-content: space-between; gap: 16px; color: var(--muted); font-size: 12px; }
+    @media (max-width: 640px) {
+      .container { width: calc(100% - 36px); }
+      header { align-items: flex-start; flex-direction: column; gap: 12px; padding-block: 20px; }
+      nav { gap: 22px; }
+      .hero { padding: 52px 0 46px; }
+      h1 { letter-spacing: -1px; }
+      .hero p { font-size: 16px; }
+      .intro, .cards { grid-template-columns: 1fr; gap: 20px; }
+      .intro { padding-block: 30px; }
+      .card { padding: 25px; }
+      .cards { padding-bottom: 40px; }
+      footer { flex-direction: column; gap: 4px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">跳转到主要内容</a>
+  <div class="container">
+    <header>
+      <a class="brand" href="#top"><span aria-hidden="true">◈</span>我的数字空间</a>
+      <nav aria-label="主导航">
+        <a href="#about">个人介绍</a>
+        <a href="#law">法学研究</a>
+        <a href="#projects">项目管理</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero" aria-labelledby="welcome">
+        <div class="eyebrow">保持好奇 · 持续成长</div>
+        <h1 id="welcome">你好，欢迎来到<br><span>我的个人主页。</span></h1>
+        <p>在研究中追问，在实践中成长。这里是我记录思考、整理知识与探索新可能的一小片天地。</p>
+        <a class="button" href="#about">认识一下我 <span aria-hidden="true">↗</span></a>
+      </section>
+      <!-- 可在下方替换为自己的姓名、经历和研究方向。 -->
+      <section class="intro" id="about" aria-labelledby="about-title">
+        <div>
+          <p class="section-label">ABOUT ME / 关于我</p>
+          <h2 id="about-title">让思考落地，<br>让成长有迹可循。</h2>
+        </div>
+        <p>我是一名关注法学研究与项目管理的学习者，也正在探索网页开发。我喜欢从复杂问题中梳理逻辑，用清晰的计划推动行动。希望通过这个个人空间，积累研究笔记、分享实践心得，也记录每一次从零开始的尝试。</p>
+      </section>
+      <div class="cards">
+        <section class="card" id="law" aria-labelledby="law-title">
+          <div class="card-top"><span class="card-number">01 / RESEARCH</span><span class="badge">理性与思辨</span></div>
+          <h2 id="law-title">法学研究</h2>
+          <p>以问题为起点，连接法律文本与现实生活，在阅读、比较与讨论中逐步形成自己的理解。</p>
+          <ul>
+            <li>阅读法律条文，梳理制度逻辑</li>
+            <li>分析典型案例，练习法律论证</li>
+            <li>整理文献笔记，积累研究问题</li>
+          </ul>
+          <div class="note">学习方向：法律方法 · 案例分析 · 文献阅读</div>
+        </section>
+        <section class="card" id="projects" aria-labelledby="projects-title">
+          <div class="card-top"><span class="card-number">02 / PRACTICE</span><span class="badge">规划与行动</span></div>
+          <h2 id="projects-title">项目管理</h2>
+          <p>把想法拆解为可以执行的小步骤，通过明确目标、安排节奏与及时复盘，让计划逐步成为成果。</p>
+          <ul>
+            <li>明确项目目标，拆解任务与里程碑</li>
+            <li>跟踪进度变化，协调时间与资源</li>
+            <li>记录实践经验，持续复盘与改进</li>
+          </ul>
+          <div class="note">当前练习：从零制作我的第一个个人主页</div>
+        </section>
+      </div>
+    </main>
+    <footer><span>我的数字空间 · 每一步，都算数。</span><a href="#top">回到顶部 ↑</a></footer>
+  </div>
+</body>
+</html>
