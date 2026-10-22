@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="个人学习、研究与生活管理系统：仅含虚构数据的第一阶段演示。">
+  <title>学习与生活工作台 · 演示</title>
+  <link rel="stylesheet" href="./assets/dashboard.css">
+  <script defer src="./assets/demo-data.js"></script>
+  <script defer src="./assets/store.js"></script>
+  <script defer src="./assets/domain.js"></script>
+  <script defer src="./assets/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳转到主要内容</a>
+  <aside>
+    <a class="brand" href="./index.html">◈ 我的数字空间</a>
+    <p class="muted">学习 · 研究 · 生活</p>
+    <nav aria-label="工作台导航">
+      <a href="#calendar">日历总览</a><a href="#tasks">任务清单</a>
+      <a href="#papers">论文进度</a><a href="#academic">学术活动</a>
+      <a href="#fitness">健身计划</a><a href="#life">生活安排</a>
+    </nav>
+    <p class="aside-note">阶段 01<br>静态演示工作台</p>
+  </aside>
+  <main id="main">
+    <header><div><p class="kicker">A LITTLE PROGRESS, EVERY DAY</p><h1>把每一天，安排得从容一点。</h1><p class="muted">演示基准日：2026 年 10 月 22 日 · 所有名称、日期及内容均为虚构。</p></div><button id="reset" type="button">重置演示</button></header>
+    <div class="notice">演示模式：只操作预设示例，不提供个人信息输入。变更仅存于页面内存，刷新即恢复；不上传数据。</div>
+    <noscript><p class="notice">请启用浏览器 JavaScript 以查看虚构数据并体验交互。</p></noscript>
+    <p id="status" role="status" aria-live="polite"></p>
+    <div id="summary" class="summary" aria-label="演示概览"></div>
+    <div class="layout">
+      <section class="panel calendar-panel" id="calendar" aria-labelledby="calendar-title">
+        <div class="section-head"><h2 id="calendar-title">日历总览</h2><div class="controls"><button id="prev-month" type="button" aria-label="上个月">←</button><strong id="month-label"></strong><button id="next-month" type="button" aria-label="下个月">→</button></div></div>
+        <p class="muted small">选择日期查看关联安排；圆点表示该日有演示事项。</p>
+        <div class="weekdays" aria-hidden="true"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div>
+        <div id="calendar-days" class="calendar-days" role="group" aria-label="选择日期"></div>
+        <h3 id="selected-label"></h3><ul id="agenda" class="items"></ul>
+      </section>
+      <section class="panel" id="tasks" aria-labelledby="tasks-title"><div class="section-head"><h2 id="tasks-title">任务清单</h2><select id="task-filter" aria-label="筛选任务"><option value="all">全部任务</option><option value="open">待完成</option><option value="done">已完成</option></select></div><div id="task-list"></div></section>
+      <section class="panel" id="papers" aria-labelledby="papers-title"><h2 id="papers-title">论文进度</h2><p class="muted small">示例课题与阶段；不包含论文全文。</p><div id="paper-list"></div></section>
+      <section class="panel" id="academic" aria-labelledby="academic-title"><h2 id="academic-title">学术活动</h2><p class="muted small">收藏仅为演示标记，不代表报名。</p><div id="academic-list"></div></section>
+      <section class="panel" id="fitness" aria-labelledby="fitness-title"><h2 id="fitness-title">健身计划</h2><p class="muted small">虚构计划，用于展示打卡流程。</p><div id="fitness-list"></div></section>
+      <section class="panel" id="life" aria-labelledby="life-title"><h2 id="life-title">生活安排</h2><div id="life-list"></div></section>
+    </div>
+    <footer>纯静态 · 无账号 · 无远程数据连接 <a href="./index.html">返回个人主页 ↗</a></footer>
+  </main>
+</body>
+</html>
