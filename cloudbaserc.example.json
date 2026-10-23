@@ -1,0 +1,5 @@
+{
+  "$schema": "https://static.cloudbase.net/cli/cloudbaserc.schema.json",
+  "envId": "REPLACE_WITH_VERIFIED_FREE_TEST_ENV_ID",
+  "functions": []
+}

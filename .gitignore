@@ -1,2 +1,14 @@
 # macOS Finder metadata is not part of the website.
 .DS_Store
+node_modules/
+.env
+.env.*
+!.env.example
+cloudbaserc.json
+*.local.json
+.cloudbase/
+exports/
+backups/
+test-results/
+playwright-report/
+dist/

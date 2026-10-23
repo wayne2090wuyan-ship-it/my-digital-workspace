@@ -1,0 +1,10 @@
+{
+  "name": "my-digital-workspace-cloud-function",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "main": "index.js",
+  "engines": { "node": ">=20" },
+  "scripts": { "test": "node --test test/*.test.cjs" },
+  "dependencies": { "@cloudbase/js-sdk": "3.10.3", "@cloudbase/signature-nodejs": "2.2.2", "ws": "8.22.0" }
+}

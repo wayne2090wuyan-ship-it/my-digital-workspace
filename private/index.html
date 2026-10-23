@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src https:; img-src 'self' data:; base-uri 'none'; object-src 'none'; form-action 'self'">
+  <meta name="description" content="个人学习、研究与生活工作台。私人数据仅在安全认证后加载。">
+  <title>学习与生活工作台</title>
+  <link rel="stylesheet" href="./workspace.css">
+  <script type="module" src="./workspace.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳转到主要内容</a>
+  <aside>
+    <a class="brand" href="../index.html">◈ 我的数字空间</a>
+    <p class="muted small">学习 · 研究 · 生活</p>
+    <nav aria-label="工作台导航">
+      <a href="#calendar">日历总览</a><a href="#tasks">任务清单</a><a href="#papers">论文进度</a>
+      <a href="#academic">学术活动</a><a href="#fitness">健身计划</a><a href="#life">生活安排</a><a href="#settings">设置与备份</a>
+    </nav>
+    <p class="small muted">把重要的事，<br>慢慢做好。</p>
+  </aside>
+  <main id="main">
+    <header><div><p class="kicker">A LITTLE PROGRESS, EVERY DAY</p><h1>学习与生活工作台</h1><p id="date-label" class="muted"></p></div><div class="actions"><button id="refresh" type="button" hidden>刷新数据</button><button id="logout" type="button" hidden>退出登录</button></div></header>
+    <div id="mode-notice" class="notice">私人模式尚未加载。请等待安全检查。</div>
+    <p id="status" role="status" aria-live="polite"></p>
+    <section id="login-panel" class="panel login" hidden aria-labelledby="login-title">
+      <h2 id="login-title">安全登录</h2><p class="muted">仅限服务端授权的个人账号。密码只发送给已配置的官方认证服务。</p>
+      <form id="login-form"><label>账号<input id="username" name="username" autocomplete="username" required maxlength="254"></label><label>密码<input id="password" name="password" type="password" autocomplete="current-password" required maxlength="256"></label><button class="primary" type="submit">登录</button></form>
+    </section>
+    <section id="locked-panel" class="panel login" hidden><h2>私人服务暂未就绪</h2><p id="locked-reason">尚未配置并验证云环境，无法登录或保存私人数据。</p><a href="?mode=demo">体验独立演示模式</a></section>
+    <div id="workspace" hidden>
+      <div class="stats" id="stats" aria-label="概览"></div>
+      <div class="grid">
+        <section class="panel" id="calendar" aria-labelledby="calendar-title"><div class="section-head"><h2 id="calendar-title">日历总览</h2><button class="add" data-create="events" type="button">新增日程</button></div><div class="calendar-controls"><button id="prev-month" aria-label="上个月" type="button">←</button><strong id="month-label"></strong><button id="next-month" aria-label="下个月" type="button">→</button><button id="today" type="button">今天</button></div><div class="weekdays" aria-hidden="true"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span></div><div id="days" class="days" role="group" aria-label="选择日期"></div><h3 id="agenda-label"></h3><div id="agenda"></div><details><summary>所有独立日程</summary><div id="events-list"></div></details></section>
+        <section class="panel" id="tasks" aria-labelledby="tasks-title"><div class="section-head"><h2 id="tasks-title">任务清单</h2><button class="add" data-create="tasks" type="button">新增任务</button></div><div class="filters"><label>筛选<select id="task-filter"><option value="all">全部</option><option value="open">待完成</option><option value="done">已完成</option></select></label><label>搜索<input id="task-search" type="search" placeholder="按标题查找" maxlength="200"></label></div><div id="tasks-list"></div></section>
+        <section class="panel" id="papers" aria-labelledby="papers-title"><div class="section-head"><h2 id="papers-title">论文进度</h2><button class="add" data-create="papers" type="button">新增课题</button></div><p class="muted small">只记录标题、目标与阶段；不存储论文全文。</p><div id="papers-list"></div></section>
+        <section class="panel" id="academic" aria-labelledby="academic-title"><div class="section-head"><h2 id="academic-title">学术活动</h2><button class="add" data-create="academic" type="button">新增活动</button></div><p class="muted small">研讨会、论坛工作和学术待办。</p><div id="academic-list"></div></section>
+        <section class="panel" id="fitness" aria-labelledby="fitness-title"><div class="section-head"><h2 id="fitness-title">健身计划</h2><button class="add" data-create="fitness" type="button">新增计划</button></div><div id="fitness-list"></div></section>
+        <section class="panel" id="life" aria-labelledby="life-title"><div class="section-head"><h2 id="life-title">生活安排</h2><button class="add" data-create="life" type="button">新增事项</button></div><div id="life-list"></div></section>
+      </div>
+      <section class="panel settings" id="settings" aria-labelledby="settings-title"><h2 id="settings-title">设置与备份</h2><label>日期显示时区<select id="timezone"><option value="Asia/Shanghai">中国标准时间 · 上海</option><option value="Asia/Tokyo">日本标准时间 · 东京</option><option value="UTC">协调世界时 · UTC</option><option value="America/New_York">美国东部 · 纽约</option></select></label><p class="muted small">当前时区选择仅保存在本页面。所有事项日期是全天日期，不会因设备时区改变而偏移。</p><div class="actions"><button id="export" type="button">导出我的数据 JSON</button><label class="file-button">选择恢复文件<input id="import-file" type="file" accept="application/json,.json"></label><button id="demo-reset" type="button" hidden>重置虚构演示</button></div><p class="small muted">云端导出上限 4 MiB，演示导出和文件读取上限 8 MiB（UTF-8 字节）。云端每次恢复最多 40 条且完整请求不超过 128 KiB，仅新增不覆盖，冲突整批回滚，不自动分批。导出不含账号或会话凭据，请勿上传到公开仓库。</p></section>
+    </div>
+    <footer><span>持续学习，认真生活。</span><a href="../dashboard.html">原始公开演示 ↗</a></footer>
+  </main>
+  <dialog id="editor" aria-labelledby="editor-title"><form id="record-form"><div class="section-head"><h2 id="editor-title">新增事项</h2><button id="close-editor" type="button" aria-label="关闭">×</button></div><p class="small muted" id="editor-notice"></p><label>标题<input name="title" required maxlength="200"></label><div class="form-grid"><label>日期<input name="date" type="date" required min="0001-01-01" max="9999-12-31"></label><label>时间（可选）<input name="time" type="time"></label></div><div data-field="papers"><label>研究目标<input name="goal" maxlength="500"></label><div class="form-grid"><label>研究阶段<select name="stage"><option value="0">选题</option><option value="1">文献整理</option><option value="2">提纲</option><option value="3">初稿</option><option value="4">阶段完成</option></select></label><label>截止日期<input name="deadline" type="date" min="0001-01-01" max="9999-12-31"></label></div></div><label data-field="academic">地点或工作分类<input name="location" maxlength="200"></label><label data-field="fitness">计划时长（分钟）<input name="duration" type="number" min="1" max="1440" step="1"></label><label>短备注<textarea name="note" maxlength="2000" rows="3"></textarea></label><label class="inline"><input name="done" type="checkbox">已完成 / 已打卡</label><p id="form-error" role="alert" class="error"></p><div class="actions"><button class="primary" type="submit">保存</button><button id="cancel-editor" type="button">取消</button></div></form></dialog>
+  <dialog id="restore-dialog" aria-labelledby="restore-title"><h2 id="restore-title">恢复预览</h2><p id="restore-summary"></p><p>恢复将新增预览中的记录，不覆盖现有同编号记录。请确认文件来自你信任的位置。</p><p id="restore-error" role="alert" class="error"></p><div class="actions"><button id="confirm-restore" type="button" class="primary">确认恢复</button><button id="cancel-restore" type="button">取消</button></div></dialog>
+</body>
+</html>

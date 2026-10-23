@@ -1,0 +1,5 @@
+{
+  "mdw_records": { "read": false, "write": false, "create": false, "update": false, "delete": false },
+  "mdw_authz": { "read": false, "write": false, "create": false, "update": false, "delete": false },
+  "mdw_imports": { "read": false, "write": false, "create": false, "update": false, "delete": false }
+}

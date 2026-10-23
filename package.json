@@ -1,0 +1,17 @@
+{
+  "name": "my-digital-workspace",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "build:sdk": "node scripts/build-sdk.mjs",
+    "build:function": "node scripts/build-function.mjs",
+    "test": "node --test tests/*.test.cjs tests/*.test.mjs backend/test/*.test.cjs",
+    "test:browser": "node tests/browser.cjs",
+    "preview": "node scripts/preview.cjs"
+  },
+  "devDependencies": {
+    "@cloudbase/js-sdk": "3.10.3",
+    "esbuild": "0.28.2",
+    "playwright": "1.62.1"
+  }
+}
