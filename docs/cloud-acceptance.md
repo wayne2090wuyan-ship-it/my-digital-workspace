@@ -2,6 +2,12 @@
 
 日期：2026-10-23。仅使用独立的虚构测试账号和数据。原首页、dashboard、assets 和原 README 均保留。
 
+## 2026-10-24 线上发布阻碍
+
+版本 e9d73b0 的 Pages 构建成功，页面和 SDK 文件均可直连返回 HTTP 200；但从 GitHub Pages 实际登录失败。核对发现该域名未被 CloudBase 允许来源收录，添加精确域名时官方 CreateAuthDomain 返回“当前套餐无法执行此操作”。官方 [CreateAuthDomain 错误码](https://cloud.tencent.com/document/product/876/42764) 包含 OperationDenied.FreePackageDenied。未购买套餐、未开通按量超额。
+
+因此 GitHub Pages 私人入口改为明确锁定并说明套餐原因，不能把 e9d73b0 的成功构建解释为正式私人系统已验收。原演示继续可用。默认静态域名只用于虚构数据测试，具有访问提示和频率风控，不能当作长期生产替代方案，见 [官方默认域名说明](https://docs.cloudbase.net/service/alias)。
+
 ## 已实际部署
 
 - 上海 CloudBase 体验环境；传统文档型数据库，不使用 SQL RLS。

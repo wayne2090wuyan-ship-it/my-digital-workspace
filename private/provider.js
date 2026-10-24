@@ -5,7 +5,7 @@ function check(result){
   return result?.data;
 }
 export async function createProvider(){
-  if(config.enabled!==true||!config.environmentId)throw failure('NOT_CONFIGURED','云环境尚未通过安全验收，私人模式保持锁定。可先体验虚构演示。');
+  if(config.enabled!==true||!config.environmentId)throw failure('NOT_CONFIGURED',typeof config.disabledReason==='string'?config.disabledReason:'云环境尚未通过安全验收，私人模式保持锁定。可先体验虚构演示。');
   if(!/^[a-zA-Z0-9-]{3,100}$/.test(config.environmentId)||!/^mdwPrivateApi$/.test(config.functionName))throw failure('NOT_CONFIGURED','公开配置格式无效。');
   const {default:cloudbase}=await import('./vendor/cloudbase.js');
   const app=cloudbase.init({env:config.environmentId,region:config.region,persistence:'none',timeout:15000,debug:false});

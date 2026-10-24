@@ -26,8 +26,8 @@
     <div id="mode-notice" class="notice">私人模式尚未加载。请等待安全检查。</div>
     <p id="status" role="status" aria-live="polite"></p>
     <section id="login-panel" class="panel login" hidden aria-labelledby="login-title">
-      <h2 id="login-title">安全登录</h2><p class="muted">仅限服务端授权的个人账号。密码只发送给已配置的官方认证服务。</p>
-      <form id="login-form"><label>账号<input id="username" name="username" autocomplete="username" required maxlength="254"></label><label>密码<input id="password" name="password" type="password" autocomplete="current-password" required maxlength="256"></label><button class="primary" type="submit">登录</button></form>
+      <h2 id="login-title">工作台登录</h2><p class="muted">使用为这个工作台创建的个人用户和独立密码。腾讯云或 GitHub 的登录密码不能用于此处。密码只发送给已配置的官方认证服务。</p>
+      <form id="login-form"><label>工作台用户名<input id="username" name="username" autocomplete="username" required maxlength="254"></label><label>工作台密码<input id="password" name="password" type="password" autocomplete="current-password" required maxlength="256"></label><button class="primary" type="submit">登录</button></form>
     </section>
     <section id="locked-panel" class="panel login" hidden><h2>私人服务暂未就绪</h2><p id="locked-reason">尚未配置并验证云环境，无法登录或保存私人数据。</p><a href="?mode=demo">体验独立演示模式</a></section>
     <div id="workspace" hidden>
